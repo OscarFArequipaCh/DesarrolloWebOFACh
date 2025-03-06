@@ -1,0 +1,68 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #93d9e9;
+}
+
+.container {
+    display: flex;
+    gap: 20px;
+}
+
+.card {
+    background-color: white;
+    width: 250px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 480px;
+    padding-bottom: 20px;
+}
+
+.card-header {
+    background-color: salmon;
+    color: white;
+    padding: 15px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.card-content {
+    list-style: none;
+    padding: 15px;
+    margin: 0;
+    text-align: left;
+    flex-grow: 1;
+}
+
+.card-content li {
+    margin: 10px 0;
+    text-align: center;
+}
+
+.buy-button {
+    background-color: gainsboro;
+    border: none;
+    padding: 10px;
+    width: 80%;
+    cursor: pointer;
+    font-weight: bold;
+    position: relative;
+    bottom: 0;
+    margin: 0 auto;
+    display: block;
+    border-radius: 5px;
+}
+
+.buy-button:hover {
+    background-color: #ddd;
+}
