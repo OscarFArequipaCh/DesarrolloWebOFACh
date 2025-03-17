@@ -95,3 +95,56 @@ body {
 .bottom-nav a:hover {
     background-color: #575757;
 }
+
+.carousel {
+    position: relative;
+    width: 600px;
+    overflow: hidden;
+}
+
+.carousel-container {
+    display: flex;
+    width: 300%;
+    transition: transform 0.5s ease-in-out;
+}
+
+.carousel-item {
+    width: 100%;
+    flex: 1;
+}
+
+.carousel-item img {
+    width: 100%;
+    display: block;
+}
+
+input {
+    display: none;
+}
+
+.carousel-controls {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+}
+
+.carousel-controls label {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 24px;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+#slide1:checked ~ .carousel-container {
+    transform: translateX(0);
+}
+
+#slide2:checked ~ .carousel-container {
+    transform: translateX(-100%);
+}
