@@ -1,6 +1,6 @@
 <?php
+include("Pila.php");
 session_start();
-require_once "Pila.php";
 
 if (!isset($_SESSION['pila'])) {
     $_SESSION['pila'] = new Pila();
@@ -33,8 +33,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <form method="POST">
         <a href="insertar.php"><button type="button">Insertar</button></a>
         <a href="mostrar.php"><button type="button">Mostrar</button></a>
-        <button type="submit" name="eliminar">Eliminar</button>
-        <button type="submit" name="salir">Salir</button>
+        <button type="hidden" name="eliminar">Eliminar</button>
+        <button type="hidden" name="salir">Salir</button>
     </form>
 
     <?php if (isset($mensaje)) { echo "<p>$mensaje</p>"; } ?>

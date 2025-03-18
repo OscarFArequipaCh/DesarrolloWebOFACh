@@ -1,7 +1,6 @@
 <?php
-session_start();
 include("Pila.php");
-require_once "Pila.php";
+session_start();
 
 if (!isset($_SESSION['pila'])) {
     $_SESSION['pila'] = new Pila();

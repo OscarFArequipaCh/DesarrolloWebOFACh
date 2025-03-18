@@ -1,11 +1,10 @@
 <?php
-session_start();
 include("Pila.php");
-require_once "Pila.php";
+session_start();
 
-
-$_SESSION['pila'] = new Pila();
-
+if (!isset($_SESSION['pila'])) {
+    $_SESSION['pila'] = new Pila();
+}
 
 $pila = $_SESSION['pila'];
 
@@ -29,7 +28,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && !empty($_POST['elemento'])) {
     <form method="POST">
         <label>Elemento a insertar:</label>
         <input type="text" name="elemento" required>
-        <button type="submit">Insertar</button>
+        <button type="hidden" name="Insertar" >Insertar</button>
     </form>
     <br>
     <a href="index.php"><button type="button">Volver</button></a>
