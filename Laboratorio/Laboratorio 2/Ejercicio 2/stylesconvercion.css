@@ -1,0 +1,19 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+table {
+    border-collapse: collapse;
+    width: 50%;
+    margin: 20px auto;
+    background-color: white;
+    border: 2px solid green;
+}
+th, td {
+    border: 1px solid green;
+    padding: 10px;
+    text-align: center;
+}
+th {
+    background-color: lightgreen;
+}
