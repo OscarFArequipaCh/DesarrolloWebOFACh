@@ -46,7 +46,7 @@ if (isset($_POST['temperatura']) && isset($_POST['unidad'])) {
     <link rel="stylesheet" href="stylesconvercion.css"/>
 </head>
 <body>
-    <h2>Resultados de la Conversión</h2>
+    <h1>Resultados de la Conversión</h1>
     <table>
         <tr>
             <th>Unidad</th>

@@ -5,8 +5,16 @@ function sumarDigitos($num) {
 }
 
 if (isset($_POST['numero'])) {
-    $numero = intval($_POST['numero']);
-    $resultado = sumarDigitos($numero);
+    if ($_POST['numero']>0){
+        $numero = intval($_POST['numero']);
+        $resultado = sumarDigitos($numero);
+    } else {
+        echo "Introdusca un numero positivo";
+        ?>
+            <meta http-equiv="refresh" content="3;url=index.html">
+        <?php
+        exit();
+    }
 } else {
     header("Location: index.html");
     exit();
@@ -23,7 +31,7 @@ if (isset($_POST['numero'])) {
 </head>
 <body>
     <div class="container">
-        <h2>Resultado de la Suma</h2>
+        <h1>Resultado de la Suma</h1>
         <table>
             <tr>
                 <th>Número</th>
