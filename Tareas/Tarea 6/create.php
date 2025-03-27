@@ -9,14 +9,15 @@ $apellidos=$_POST['apellidos'];
 $fecha_nacimiento=$_POST['fecha_nacimiento'];
 $sexo=$_POST['sexo'];
 $correo=$_POST['correo'];
+$profesion_id=$_POST['profesion_id'];
 
 //$sql="INSERT INTO personas(nombres,apellidos,fecha_nacimiento,sexo,correo) VALUES('$nombres','$apellidos','$fecha_nacimiento','$sexo','$correo')";
 
 
-$stmt=$con->prepare('INSERT INTO personas(nombres,apellidos,fecha_nacimiento,sexo,correo) VALUES(?,?,?,?,?)');
+$stmt=$con->prepare('INSERT INTO personas(nombres,apellidos,fecha_nacimiento,sexo,correo,profesion_id) VALUES(?,?,?,?,?,?)');
 
 // Vincular parámetros
-$stmt->bind_param("sssss",$nombres, $apellidos,$fecha_nacimiento,$sexo,$correo);
+$stmt->bind_param("ssssss",$nombres, $apellidos,$fecha_nacimiento,$sexo,$correo,$profesion_id);
 
 
 

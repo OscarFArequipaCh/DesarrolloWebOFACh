@@ -9,15 +9,16 @@ $fecha_nacimiento=$_POST['fecha_nacimiento'];
 $sexo=$_POST['sexo'];
 $correo=$_POST['correo'];
 $id=$_POST['id'];
+$profesion_id=$_POST['profesion_id'];
 
 //$sql="UPDATE personas SET nombres='$nombres',apellidos='$apellidos',fecha_nacimiento='$fecha_nacimiento',sexo='$sexo',correo='$correo' WHERE id=$id";
 
 
-$stmt=$con->prepare('UPDATE personas SET nombres=?,apellidos=?,fecha_nacimiento=?,sexo=?,correo=? WHERE id=?');
+$stmt=$con->prepare('UPDATE personas SET nombres=?,apellidos=?,fecha_nacimiento=?,sexo=?,correo=?,profesion_id=? WHERE id=?');
 
 
 // Vincular parámetros
-$stmt->bind_param("sssssi",$nombres, $apellidos,$fecha_nacimiento,$sexo,$correo, $id);
+$stmt->bind_param("sssssii",$nombres, $apellidos,$fecha_nacimiento,$sexo,$correo,$profesion_id, $id);
 
 
 

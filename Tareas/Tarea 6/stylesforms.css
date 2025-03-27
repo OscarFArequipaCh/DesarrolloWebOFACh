@@ -1,7 +1,7 @@
 body {
     font-family: Arial, sans-serif;
     text-align: center;
-    background: linear-gradient(45deg, #f8f66f, #7fd36e);
+    background: linear-gradient(45deg, #000000, #414241);
     height: 100vh;
     display: flex;
     justify-content: center;
@@ -9,7 +9,7 @@ body {
 }
 
 .container {
-    background-color: white;
+    background-color: darkorange;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
@@ -22,9 +22,14 @@ form {
     gap: 10px;
 }
 
+label {
+    font-size: 1.2em;
+    color: white;
+}
+
 input, button {
     padding: 10px;
-    border: 1px solid #ccc;
+    border: 1px solid black;
     border-radius: 5px;
 }
 
