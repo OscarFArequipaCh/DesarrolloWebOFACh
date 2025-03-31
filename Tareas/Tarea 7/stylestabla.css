@@ -1,0 +1,50 @@
+body {
+    font-family: Arial, sans-serif;
+    background: white;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    width: 100%;
+}
+
+table {
+    width: 80%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    background: white;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+table th, table td {
+    border: 1px solid black;
+    padding: 10px;
+    text-align: left;
+}
+
+table th {
+    background-color: red;
+    color: white;
+}
+
+table tr:nth-child(even) {
+    background-color: yellow;
+}
+
+a {
+    display: inline-block;
+    text-decoration: underline;
+    color: blue;
+}
+
+a:hover {
+    color: aqua;
+}
+
+.content {
+    margin-left: 270px;
+    padding: 20px;
+    text-align: center;
+    flex-grow: 1;
+}
