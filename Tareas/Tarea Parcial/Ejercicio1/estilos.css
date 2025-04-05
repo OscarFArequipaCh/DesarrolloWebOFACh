@@ -1,0 +1,90 @@
+body {
+    background-color: #f0f0f0;
+    font-family: Arial, sans-serif;
+}
+
+header {
+    background-color: rgb(64, 123, 138);
+    color: white;
+    padding: 10px 0;
+    text-align: center;
+    position: fixed;
+    width: 900px;
+    height: 200px;
+    top: 0;
+    left: 0;
+}
+
+h1 {
+    color: red;
+    text-align: center;
+    line-height: 50%;
+    font-family: "Homer Simpson UI";
+}
+
+h2 {
+    color: blue;
+    text-align: center;
+    line-height: 50%;
+    font-family: "Homer Simpson UI";
+}
+
+p{
+    color: black;
+    text-align: center;
+    line-height: 50%;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    height: 100vh;
+}
+
+.sidebar{
+    position: fixed;
+    top: 220px;
+    left: 0;
+    width: 120px;
+    height: 200px;
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+
+}
+
+.sidebar h2 {
+    color: #fff;
+    text-align: center;
+}
+
+.sidebar a {
+    color: black;
+    text-decoration: none;
+    display: block;
+    padding: 10px 0;
+    background-color: white;
+    border: 1px solid black;
+    width: 100px;
+}
+
+.sidebar a:hover {
+    background-color: whitesmoke;
+}
+
+.content {
+    position: fixed;
+    padding: 20px;
+    width: 702px;
+    height: 200px;
+    background-color: rgb(221, 221, 221);
+    flex-grow: 1;
+    margin-top: 212px;
+    margin-left: 150px;
+}
+
+.content a {
+    color: black;
+    text-align: left;
+}
+
