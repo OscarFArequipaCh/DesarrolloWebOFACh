@@ -25,6 +25,10 @@ body {
     text-align: center;
 }
 
+.sidebar p {
+    text-align: left;
+}
+
 .sidebar a {
     display: block;
     color: darkorange;

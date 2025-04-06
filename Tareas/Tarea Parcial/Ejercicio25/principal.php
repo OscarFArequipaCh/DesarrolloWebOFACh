@@ -20,6 +20,13 @@ $resultado=$con->query($sql);
         
         <nav class="sidebar">
             <h2>Menú</h2>
+            <p>Usuario: <?php echo $_SESSION['usuario'];?></p>
+            <p>Tipo:
+            <?php if($_SESSION['nivel'] == 1){?>
+            Administrador
+            <?php } else {?>
+            Usuario
+            <?php } ?></p>
             <a href="cerrarsesion.php">Cerrar Sesion</a>
         </nav>
         
@@ -30,6 +37,9 @@ $resultado=$con->query($sql);
                     <th width="100px">Productos</th>
                     <th width="100px">Precios</th>
                     <th width="100px">imagen</th>
+                    <?php if($_SESSION['nivel']==1){?>
+                    <th width="100px">Operaciones</th>
+                    <?php } ?>
                 </tr>
             </thead>
             <?php 
@@ -53,6 +63,3 @@ $resultado=$con->query($sql);
     
 </body>
 </html>
-
-
- 
