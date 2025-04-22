@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var arreglo = new Array(5);
+        for (var i = 0; i < arreglo.length; i++) {
+            do{
+                arreglo[i] = prompt("Ingrese el elemento " + (i + 1) + ":");
+                if (isNaN(arreglo[i])) {
+                    alert("El valor ingresado no es un número. Intente nuevamente.");
+                }
+            }while (isNaN(arreglo[i]));
+        }
+
+        function contarPares(arreglo) {
+            var contador = 0;
+            for (var i = 0; i < arreglo.length; i++) {
+                if (arreglo[i] % 2 == 0 && arreglo[i] != 0) {
+                    contador++;
+                }
+            }
+            return contador;
+        }
+        arreglo.forEach(element => {
+            document.write(element + "<br>");
+        });
+        document.write("El número de elementos pares en el arreglo es: " + contarPares(arreglo) + "<br>");
+    </script>
+</body>
+</html>

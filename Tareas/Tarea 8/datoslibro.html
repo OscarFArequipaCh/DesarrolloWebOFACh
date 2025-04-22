@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var titulo = prompt("titulo del libro");
+        var autor = prompt("autor del libro");
+        var editorial = prompt("editorial del libro");
+        var anio = prompt("año del libro");
+
+        libro = {
+            nombre: nombre,
+            autor: autor,
+            editorial: editorial,
+            anio: anio,
+
+            mostrar: function() {
+                document.write("Nombre: " + this.nombre + "<br>");
+                document.write("Autor: " + this.autor + "<br>");
+                document.write("Editorial: " + this.editorial + "<br>");
+                document.write("Año: " + this.anio + "<br>");
+            }
+        };
+        
+        libro.mostrar();
+    </script>
+</body>
+</html>
