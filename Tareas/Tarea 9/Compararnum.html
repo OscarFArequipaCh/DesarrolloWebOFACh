@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Comparar Números</title>
+  <style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        
+    }
+
+    .container {
+        max-width: 400px;
+        align-items: center;
+        margin: auto;
+        padding: 20px;
+        background-color: white;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        
+    }
+
+    label {
+        margin-top: 10px;
+        display: block;
+        font-weight: bold;
+    }
+
+    input[type="number"],
+    button,
+    #resultado {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    input[type="number"] {
+        padding: 10px;
+        margin: 5px 0 15px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+
+    button {
+        padding: 15px;
+        font-size: 18px;
+        border-radius: 5px;
+        font-weight: bold;
+        background-color: rgb(0, 132, 255);
+        color: white;
+        cursor: pointer;
+        border: none;
+        margin-top: 10px;
+    }
+
+    button:hover {
+        background-color: rgb(0, 73, 141);
+    }
+
+    #resultado {
+        margin-top: 20px;
+        padding: 15px;
+        border: 2px solid black;
+        font-weight: bold;
+        text-align: center;
+        background-color: lightgray;
+        border-radius: 5px;
+    }
+  </style>
+</head>
+<body>
+  
+    <div class="container">
+        <label for="a">Número A:</label><br>
+        <input type="number" id="a"><br>
+
+        <label for="b">Número B:</label><br>
+        <input type="number" id="b"><br>
+
+        <button onclick="compararNumeros()">Comparar</button>
+
+        <div id="resultado">Resultado aquí</div>
+
+    </div>
+  
+  <script>
+    function compararNumeros() {
+      const a = parseFloat(document.getElementById('a').value);
+      const b = parseFloat(document.getElementById('b').value);
+      const resultadoDiv = document.getElementById('resultado');
+
+      if (isNaN(a) || isNaN(b)) {
+        resultadoDiv.textContent = "Por favor ingrese dos números válidos.";
+        resultadoDiv.style.backgroundColor = "lightcoral";
+        return;
+      }
+
+      if (a > b) {
+        resultadoDiv.textContent = "A es mayor que B";
+        resultadoDiv.style.backgroundColor = "green";
+      } else if (b > a) {
+        resultadoDiv.textContent = "B es mayor que A";
+        resultadoDiv.style.backgroundColor = "blue";
+      } else {
+        resultadoDiv.textContent = "A y B son iguales";
+        resultadoDiv.style.backgroundColor = "gray";
+      }
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            align-items: center;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .container{
+            flex-direction: row;
+            display: flex;
+            justify-content: center;
+        }
+
+        label {
+            margin-top: 10px;
+            display: block;
+            font-weight: bold;
+        }
+
+        select, input[type="number"], button, #resultado {
+            border-radius: 5px;
+            border-color: orange;
+            padding: 10px;
+            margin: 0px;
+        }
+
+        button {
+            background-color: rgb(255, 255, 118);
+            height: fit-content;
+        }
+
+        button:hover {
+            background-color: rgb(255, 255, 0);
+        }
+
+        #resultado {
+            padding: 15px;
+            border: 2px solid orange;
+            color: white;
+            font-weight: bold;
+            text-align: left;
+            background-color: rgb(255, 145, 0);
+            width: 200px;
+        }
+    </style>
+</head>
+<body>
+    <label for="select">Operación:</label><br>
+    <select id="select" name="select">
+        <option value="0">Sumar</option>
+        <option value="1">Restar</option>
+        <option value="2">Multiplicar</option>
+        <option value="3">Dividir</option>
+    </select>
+    <label for="a">A:</label><br>
+    <input type="number" id="a"><br>
+
+    <label for="b">B:</label><br>
+    <input type="number" id="b"><br>
+
+    <div class="container">
+        <button onclick="calcular()">Calcular</button>
+        <div id="resultado"> </div>
+    </div>
+    
+
+    <script>
+        function calcular() {
+            const a = parseFloat(document.getElementById('a').value);
+            const b = parseFloat(document.getElementById('b').value);
+            const operacion = document.getElementById('select').value;
+            let resultado;
+
+            switch (operacion) {
+                case '0':
+                    resultado = a + b;
+                    break;
+                case '1':
+                    resultado = a - b;
+                    break;
+                case '2':
+                    resultado = a * b;
+                    break;
+                case '3':
+                    if (b !== 0) {
+                        resultado = a / b;
+                    } else {
+                        resultado = "Error: División por cero";
+                    }
+                    break;
+                default:
+                    resultado = "Operación no válida";
+            }
+
+            document.getElementById('resultado').innerText = ` ${resultado}`;
+        }
+    </script>
+</body>
+</html>
