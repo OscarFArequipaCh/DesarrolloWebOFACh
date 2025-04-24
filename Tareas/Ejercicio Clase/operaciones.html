@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 800px;
+            border: 3px solid #ddd;
+            padding: 20px;
+            border-radius: 5px;
+            border-color: black;
+        }
+
+        input[type="number"] {
+            width: 30px;
+            margin: 0 10px;
+        }
+
+    
+        input[type="radio"] {
+        display: none;
+        }
+
+        .radio-button-square {
+        width: 10px;
+        height: 10px;
+        border: 2px solid black;
+        background-color: white;
+        border-radius: 3px; 
+        cursor: pointer;
+        display: inline-block;
+        margin-right: 10px; 
+        }
+
+        label:has(input[type="radio"]:checked) .radio-button-square {
+        background-color: black; 
+        }
+      
+        label {
+        display: inline-block; 
+        vertical-align: middle;
+        margin-left: 5px; 
+        }
+
+        .tabla-resultados {
+        border-collapse: collapse;
+        width: 100%;
+        margin-top: 20px;
+        }
+
+        .tabla-resultados th,
+        .tabla-resultados td {
+            border: 1px solid rgb(0, 110, 255);
+            padding: 8px;
+            text-align: center;
+            
+        }
+
+        .tabla-resultados tr:nth-child(even) {
+            background-color: rgb(119, 189, 255);
+        }
+
+        .tabla-operaciones {
+            border: none;
+            margin-left: 20px;
+        }
+
+        .tabla-operaciones th {
+            border: none;
+            text-align: left;
+        }
+
+        button {
+            border-color: blue;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 20px;
+        }
+
+        #resultado {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <label for="tabla">Tabla</label>
+        <input type="number" id="tabla" name="tabla">
+        <div>
+            <table class="tabla-operaciones">
+                <tr>
+                    <th>
+                        <label><input type="radio" name="operacion" id="operacion_suma" value="suma">Sumar
+                        <span class="radio-button-square"></span></label>
+                        <label><input type="radio" name="operacion" id="operacion_multiplicar" value="multiplicacion">Multiplicar
+                        <span class="radio-button-square"></span></label>
+                    </th>
+                </tr>
+                <tr>
+                    <th>
+                        <label><input type="radio" name="operacion" id="operacion_resta" value="resta">Restar
+                        <span class="radio-button-square"></span></label>
+                        <label><input type="radio" name="operacion" id="operacion_dividir" value="division">Dividir
+                        <span class="radio-button-square"></span></label>
+                    </th>
+                </tr>
+            </table>
+        </div>
+        <label for="cantidad">Hasta</label>
+        <input type="number" id="cantidad" name="cantidad">
+
+        <button id="btncalcular">Calcular</button>
+    </div>
+    
+    <div id="resultado"></div>
+
+    <script>
+        document.getElementById("btncalcular").addEventListener("click", ()=>{
+            const tabla = parseInt(document.getElementById("tabla").value);
+            const cantidad = parseInt(document.getElementById("cantidad").value);
+            const operacionseleccionada = document.querySelector('input[name="operacion"]:checked');
+
+            const operacion = operacionseleccionada.value;
+            let html = `<table class="tabla-resultados"><tbody>`;
+               
+
+            for(let i=1; i<=cantidad; i++){
+                let operaciontexto = "";
+                let resultado = "";
+
+                switch(operacion){
+                    case "suma":
+                        operaciontexto = `+`;
+                        resultado = tabla + i;
+                        break;
+                    case "resta":
+                        operaciontexto = `-`;
+                        resultado = tabla - i;
+                        break;
+                    case "multiplicacion": 
+                        operaciontexto = `*`;
+                        resultado = tabla * i;
+                        break;
+                    case "division":
+                        operaciontexto = `/`;
+                        resultado = tabla / i;
+                        break;  
+                }
+
+                html += `<tr><td>${tabla}</td><td>${operaciontexto}</td><td>${i}</td><td>=</td><td>${resultado}</td></tr>`;
+            }
+
+            html += "</tbody></table>";
+            document.getElementById("resultado").innerHTML = html;
+
+        });
+    </script>
+</body>
+</html>
