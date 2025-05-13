@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Examen Parcial</title>
+    <link rel="stylesheet" href="stylesmenu.css">
+</head>
+<body onload="cargarMenu()">
+    <button id="menuBtn" onclick="cargarMenu()">Menu</button>
+    <div id="men"></div>
+    <div id="princip">
+
+    </div>
+    <div id="mensaj"></div>
+
+    <div id="miModal" style="display:none; position:fixed; top:0; left:0; 
+    width:100%; height:100%; background:rgba(0,0,0,0.5); 
+    justify-content:center; align-items:center;">
+        <div style="background:white; padding:20px; text-align:center;">
+            <img id="imagenGrande" src="" width="200px" height="600px" />
+            <br><br>
+            <button onclick="cerrarModal()">Aceptar</button>
+        </div>
+    </div>
+
+    <script>
+        function cargarMenu() {
+            fetch('botones.html')
+            .then(response => response.text())
+            .then(data => {
+            document.getElementById('men').innerHTML = data;
+            document.getElementById('mensaj').innerText = "Juan Pérez - CU: 12345678";
+            })
+            .catch(error => console.error('Error al cargar botones:', error));
+        }
+
+        function cargarGaleria() {
+            fetch('galeria.php')
+            .then(res => res.text())
+            .then(html => {
+            document.getElementById('princip').innerHTML = html;
+            })
+            .catch(err => console.error(err));
+        }
+
+        function mostrarModal(imagenSrc) {
+            document.getElementById('imagenGrande').src = imagenSrc;
+            document.getElementById('miModal').style.display = 'flex';
+        }
+
+        function cerrarModal() {
+            document.getElementById('miModal').style.display = 'none';
+        }
+
+        function cargarFormulario() {
+            fetch('formulario.html')
+            .then(res => res.text())
+            .then(html => {
+            document.getElementById('princip').innerHTML = html;
+            })
+            .catch(err => console.error(err));
+        }
+    </script>
+</body>
+</html>
