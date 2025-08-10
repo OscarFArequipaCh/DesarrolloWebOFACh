@@ -4,31 +4,34 @@ body {
     padding: 0px;
     background-color: #f4f4f4;
 }
-nav {
-    background-color: #333;
+
+.navbar {
+    background-color: #3498db;
     color: white;
+    padding: 10px;
+    text-align: center;
+    display: flex;
+}
+
+.navbar nav {
     padding: 10px;
     width: 100%;
 }
-nav ul {
+.navbar ul {
     list-style-type: none;
     padding: 0;
 }
-nav ul li {
+.navbar ul li {
     display: inline;
     margin-right: 20px;
 }
-nav ul li a {
+.navbar ul li a {
     color: white;
     text-decoration: none;
 }
-.container {
-    width: 80%;
-    margin: auto;
-    padding: 20px;
-    background-color: white;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+.navbar ul li a:hover {
+    text-decoration: underline;
 }
 
 h1 {
@@ -38,12 +41,7 @@ h1 {
 p {
     color: #666;
 }
-.container img {
-    border-radius: 10px;
-    margin-top: 10px;
-    display: block;
-    margin: 0 auto;
-}
+
 a {
     color: #007BFF;
     text-decoration: none;
@@ -51,6 +49,25 @@ a {
 a:hover {
     text-decoration: underline;
 }
+
+
+.container {
+    width: 80%;
+    margin: auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+
+.container img {
+    border-radius: 10px;
+    margin-top: 10px;
+    display: block;
+    margin: 0 auto;
+}
+
 .targets {
     display: flex;
     justify-content: center;
