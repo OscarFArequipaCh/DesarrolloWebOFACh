@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0px;
+        }
+        .sidebar {
+            width: 200px;
+            height: 100vh;
+            background-color: #404040;
+            position: fixed;
+            padding: 20px;
+            top: 0;
+            left: 0;
+        }
+        .sidebar .logo img {
+            width: 100%;
+            height: auto;
+        }
+        .sidebar .datos {
+            margin: 0px;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #C60000;
+        }
+        .sidebar .datos p {
+            margin: 5px 0;
+            text-align: center;
+            color: white;
+        }
+        .sidebar .datos p2 {
+            display: block;
+            text-align: center;
+            color: gray;
+            font-size: 12px;
+        }
+        .sidebar a {
+            display: block;
+            padding: 10px;
+            color: white;
+            text-decoration: none;
+            margin: 0px;
+            width: 100%;
+        }
+        .sidebar a:hover {
+            background-color: #ddd;
+        }
+
+        .content {
+            margin-left: 220px;
+            padding: 20px;
+            background-color: #D9D9D9;
+            width: calc(100% - 240px);
+            height: 100vh;
+        }
+        .content nav {
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: calc(100% - 240px);
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            border-bottom: #767676 2px solid;
+        }
+
+        .header {
+            align-items: center;
+            margin-top: 20px;
+        }
+        .header h1 {
+            margin: 0;
+            font-size: 24px;
+            color: gray;
+        }
+        .header h2 {
+            margin: 0;
+            font-size: 18px;
+            color: gray;
+        }
+        .main-menu {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+        }
+        .main-menu a {
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            text-decoration: none;
+            border: 1px solid gray;
+            width: 150px;      
+            height: 180px;    
+            overflow: hidden;             
+        }
+        .main-menu a:hover {
+            border: 1px solid #C60000;
+        }
+        .main-menu p {
+            background-color: white;
+            margin: 0;
+            padding: 10px;
+            border-bottom: 2px solid gray;
+        }
+        .main-menu a:hover p {
+            background-color: #C60000;
+            border-bottom: 2px solid #C60000;
+            color: white;
+        }
+        .main-menu img {
+            flex: 1;                      
+            width: 100%;            
+            height: 100%;             
+            object-fit: cover;
+        }
+    </style>   
+</head>
+<body>
+    <nav class="sidebar">
+        <div class="logo">
+            <img src="Avatar.png" alt="Logo">
+        </div>
+        <div class="datos">
+            <p>Nombre del estudiante</p>
+            <p2>Carnet universitario</p2>
+            <p>Rpositorio GitHub.com</p>
+        </div>
+        <a href="#"><img src="Inicio-menu.png" alt="inicio-menu" width="12px"> Inicio</a>
+        <a href="#"><img src="cliente-menu.png" alt="cliente-menu" width="12px"> Clientes</a>
+        <a href="#"><img src="prestamos-menu.png" alt="prestamos-menu" width="12px"> Prestamos</a>
+        <a href="#"><img src="items-menu.png" alt="items-menu" width="12px"> Items</a>
+        <a href="#"><img src="usuarios-menu.png" alt="usuarios-menu" width="12px"> Usuarios</a>
+    </nav>
+    <div class="content">
+        <nav>
+            <a href="#"><img src="configurar.png" alt="configurar"></a>
+            <a href="#"><img src="Salir.png" alt="Salir"></a>
+        </nav>
+        <div class="header">
+            <h1><img src="Inicio-logo.png" alt="inicio-logo" width="30px"> Inicio</h1>
+            <h2>Primer Examen Parcial</h2>
+        </div>
+        <div class="main-menu">
+            <a href="#">
+                <p>Clientes</p>
+                <img src="clientes.png" alt="clientes">
+            </a>
+            <a href="#">
+                <p>Items</p>
+                <img src="items.png" alt="items">
+            </a>
+            <a href="#">
+                <p>Prestamos</p>
+                <img src="Prestamos.png" alt="items">
+            </a>
+            <a href="#">
+                <p>Uusarios</p>
+                <img src="inicio.png" alt="items">
+            </a>
+        </div>
+
+    </div>
+</body>
+</html>
