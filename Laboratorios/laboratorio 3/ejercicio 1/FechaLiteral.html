@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fecha Literal</title>
+</head>
+
+<body>
+    <label for="fechaInput">Seleccione una Fecha</label>
+    <input type="date" id="fechaInput">
+    <button id="convertirBtn">Convertir a Literal</button>
+    <div id="resultado" style="margin-top:20px; font-weight:bold;"></div>
+
+    <script>
+        function numeroALiteral(n) {
+            const unidades = ["", "uno", "dos", "tres", "cuatro", "cinco", "seis", "siete", "ocho", "nueve"];
+            const especiales = ["diez", "once", "doce", "trece", "catorce", "quince", "dieciséis", "diecisiete", "dieciocho", "diecinueve"];
+            const decenas = ["", "", "veinte", "treinta", "cuarenta", "cincuenta", "sesenta", "setenta", "ochenta", "noventa"];
+            const centenas = ["", "cien", "doscientos", "trescientos", "cuatrocientos", "quinientos", "seiscientos", "setecientos", "ochocientos", "novecientos"];
+
+            n = parseInt(n);
+            if (n === 0) return "cero";
+            if (n < 10) return unidades[n];
+            if (n < 20) return especiales[n - 10];
+            if (n < 100) {
+                const d = Math.floor(n / 10);
+                const u = n % 10;
+                return decenas[d] + (u ? " y " + unidades[u] : "");
+            }
+            if (n < 1000) {
+                const c = Math.floor(n / 100);
+                const resto = n % 100;
+                return centenas[c] + (resto ? " " + numeroALiteral(resto) : "");
+            }
+            if (n < 10000) {
+                const mil = Math.floor(n / 1000);
+                const resto = n % 1000;
+                let literalMil = mil === 1 ? "mil" : numeroALiteral(mil) + " mil";
+                return literalMil + (resto ? " " + numeroALiteral(resto) : "");
+            }
+            return n.toString();
+        }
+
+        function fechaLiteral(fechaISO) {
+            const meses = [
+                "enero", "febrero", "marzo", "abril", "mayo", "junio",
+                "julio", "agosto", "septiembre", "octubre", "noviembre", "diciembre"
+            ];
+
+            const [anio, mes, dia] = fechaISO.split("-").map(x => parseInt(x));
+
+            const diaLiteral = numeroALiteral(dia);
+            const mesLiteral = meses[mes - 1];
+            const anioLiteral = numeroALiteral(anio);
+
+            return `${diaLiteral} de ${mesLiteral} de ${anioLiteral}`;
+        }
+
+        document.getElementById("convertirBtn").onclick = function () {
+            const fechaInput = document.getElementById("fechaInput").value;
+            const divResultado = document.getElementById("resultado");
+
+            if (!fechaInput) {
+                divResultado.textContent = "Por favor, seleccione una fecha.";
+                divResultado.style.color = "red";
+                return;
+            }
+
+            const resultado = fechaLiteral(fechaInput);
+            divResultado.textContent = "Fecha en literal: " + resultado;
+            divResultado.style.color = "black";
+        };
+    </script>
+</body>
+
+</html>

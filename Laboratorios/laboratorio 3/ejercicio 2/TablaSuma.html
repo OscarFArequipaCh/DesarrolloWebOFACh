@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <label for="numero">Ingrese Numero:</label>
+    <input type="number" id="numero">
+    <button id="boton">Crear Tabla</button>
+    <div id="tabla"></div>
+
+    <label for="color"></label>
+    <input type="color" id="color" value="#ff0000">
+    <button id="botonColor">colorear fondo</button>
+
+
+    <script>
+        document.getElementById("boton").onclick = function () {
+            let numero = parseInt(document.getElementById('numero').value); //almacena el numero ingresado
+            let divTabla = document.getElementById("tabla"); //almacena el div donde se creará la tabla
+
+            divTabla.innerHTML = "";
+            arrayResultado = []; // Array para almacenar las celdas en la columna de resultado
+
+            let tabla = document.createElement("table"); //crea la tabla
+            tabla.border = "1";
+            tabla.style.borderCollapse = "collapse";
+            tabla.style.width = "50%";
+            tabla.style.textAlign = "center";
+
+            let encabezado = document.createElement("tr"); //crea la fila del encabezado
+            let th1 = document.createElement("th");
+            th1.textContent = "Operador 1";
+            let th2 = document.createElement("th");
+            th2.textContent = "Operación";
+            let th3 = document.createElement("th");
+            th3.textContent = "Operador 2";
+            let th4 = document.createElement("th");
+            th4.textContent = " ";
+            let th5 = document.createElement("th");
+            th5.textContent = "Resultado";
+            encabezado.appendChild(th1);
+            encabezado.appendChild(th2);
+            encabezado.appendChild(th3);
+            encabezado.appendChild(th4);
+            encabezado.appendChild(th5);
+            tabla.appendChild(encabezado);
+
+            for (let i = 1; i <= 10; i++) {
+                let fila = document.createElement("tr");
+                let celdaOperador1 = document.createElement("td");
+                let celdaOperacion = document.createElement("td");
+                let celdaOperador2 = document.createElement("td");
+                let celdaIgual = document.createElement("td");
+                let celdaResultado = document.createElement("td");
+
+                
+                arrayResultado.push(celdaResultado);
+
+                celdaOperador1.textContent = numero;
+                celdaOperacion.textContent = `+`;
+                celdaOperador2.textContent = i;
+                celdaIgual.textContent = "=";
+                celdaResultado.textContent = numero + i;
+
+                fila.appendChild(celdaOperador1);
+                fila.appendChild(celdaOperacion);
+                fila.appendChild(celdaOperador2);
+                fila.appendChild(celdaIgual);
+                fila.appendChild(celdaResultado);
+                tabla.appendChild(fila);
+            }
+
+            divTabla.appendChild(tabla);
+        };
+
+        document.getElementById("botonColor").onclick = function () {
+            let color = document.getElementById('color').value;
+
+            if (arrayResultado.length === 0) {
+                alert("Primero debe crear la tabla.");
+                return;
+            }
+
+            // Recorremos todas las celdas de resultado y aplicamos color
+            arrayResultado.forEach(celda => {
+                celda.style.color = color;
+            });
+
+        };
+    </script>
+</body>
+
+</html>

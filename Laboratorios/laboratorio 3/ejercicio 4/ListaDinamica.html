@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        label, input, button {
+            margin: 5px;
+            padding: 0px;
+            width: 80px;
+        }
+        ul {
+            list-style-type: disc;
+            padding-left: 20px;
+        }
+
+        #boton {
+            background-color: rgb(79, 129, 189);
+            border: 4px solid rgb(56, 93, 138);
+            cursor: pointer;
+            color: white;
+        }
+
+        #elemento {
+            border: 4px solid black;
+            padding: 0px;
+        }
+    </style>
+</head>
+<body>
+    <label for="elemento">Elemento Lista:</label>
+    <input type="text" id="elemento">
+
+    <label for="color">Color</label>
+    <input type="color" id="color" value="#ff0000">
+    <button id="boton">Agregar</button>
+
+    <ul id="lista"></ul>
+
+    <script>
+        document.getElementById("boton").onclick = function() {
+            let elementoTexto = document.getElementById('elemento').value; //almacena el texto del elemento
+            let color = document.getElementById('color').value; //almacena el color seleccionado
+            let lista = document.getElementById("lista"); //almacena la lista donde se agregarán los elementos
+
+            if (elementoTexto.trim() === "") {
+                alert("Por favor, ingrese un texto válido.");
+                return;
+            }
+
+            let nuevoElemento = document.createElement("li"); //crea un nuevo elemento de lista
+            nuevoElemento.textContent = elementoTexto; //asigna el texto al nuevo elemento
+            nuevoElemento.style.color = color; //asigna el color al texto del nuevo elemento
+
+            lista.appendChild(nuevoElemento); //agrega el nuevo elemento a la lista
+
+            document.getElementById('elemento').value = ""; //limpia el campo de texto
+        };
+    </script>
+</body>
+</html>

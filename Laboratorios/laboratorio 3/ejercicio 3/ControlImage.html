@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cambiar tamaño de imagen</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial, sans-serif;
+            margin-top: 50px;
+        }
+
+        img {
+            border: 2px solid #ccc;
+            border-radius: 10px;
+            transition: width 0.3s ease;
+        }
+
+        button {
+            margin: 5px;
+            padding: 8px 15px;
+            font-size: 16px;
+        }
+
+        input[type="number"] {
+            width: 80px;
+            text-align: center;
+            font-size: 16px;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Cambiar tamaño de la imagen</h2>
+    <img id="imagen" src="Avatar.png" width="200" alt="Imagen de ejemplo">
+    <br><br>
+
+    <label for="cantidad">Cantidad (px): </label>
+    <input type="number" id="cantidad" value="20" min="1">
+    <br><br>
+
+    <button id="agrandar">Agrandar</button>
+    <button id="reducir">Reducir</button>
+
+    <script>
+        const imagen = document.getElementById("imagen");
+        const cantidadInput = document.getElementById("cantidad");
+        const btnAgrandar = document.getElementById("agrandar");
+        const btnReducir = document.getElementById("reducir");
+
+        btnAgrandar.onclick = function () {
+            const cantidad = parseInt(cantidadInput.value) || 0;
+            imagen.width += cantidad;
+        };
+
+        btnReducir.onclick = function () {
+            const cantidad = parseInt(cantidadInput.value) || 0;
+            if (imagen.width - cantidad > 0) { // evitar tamaño negativo o cero
+                imagen.width -= cantidad;
+            }
+        };
+    </script>
+</body>
+
+</html>
