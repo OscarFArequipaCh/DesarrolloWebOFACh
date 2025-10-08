@@ -57,7 +57,7 @@
 
         btnReducir.onclick = function () {
             const cantidad = parseInt(cantidadInput.value) || 0;
-            if (imagen.width - cantidad > 0) { // evitar tamaño negativo o cero
+            if (imagen.width - cantidad > 0) { 
                 imagen.width -= cantidad;
             }
         };

@@ -43,22 +43,22 @@
 
     <script>
         document.getElementById("boton").onclick = function() {
-            let elementoTexto = document.getElementById('elemento').value; //almacena el texto del elemento
-            let color = document.getElementById('color').value; //almacena el color seleccionado
-            let lista = document.getElementById("lista"); //almacena la lista donde se agregarán los elementos
+            let elementoTexto = document.getElementById('elemento').value; 
+            let color = document.getElementById('color').value; 
+            let lista = document.getElementById("lista"); 
 
             if (elementoTexto.trim() === "") {
                 alert("Por favor, ingrese un texto válido.");
                 return;
             }
 
-            let nuevoElemento = document.createElement("li"); //crea un nuevo elemento de lista
-            nuevoElemento.textContent = elementoTexto; //asigna el texto al nuevo elemento
-            nuevoElemento.style.color = color; //asigna el color al texto del nuevo elemento
+            let nuevoElemento = document.createElement("li"); 
+            nuevoElemento.textContent = elementoTexto; 
+            nuevoElemento.style.color = color; 
 
-            lista.appendChild(nuevoElemento); //agrega el nuevo elemento a la lista
+            lista.appendChild(nuevoElemento); 
 
-            document.getElementById('elemento').value = ""; //limpia el campo de texto
+            document.getElementById('elemento').value = ""; 
         };
     </script>
 </body>
