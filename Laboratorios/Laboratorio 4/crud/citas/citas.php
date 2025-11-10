@@ -38,31 +38,51 @@ $result = mysqli_query($con, $sql);
 <style>
 /* Colores por estado */
 .estado-pendiente {
-    background-color: #ffeb99; /* amarillo claro */
+    background-color: #ffeb99;
     color: #664d00;
     font-weight: bold;
 }
 .estado-confirmada {
-    background-color: #b3ffb3; /* verde */
+    background-color: #b3ffb3;
     color: #004d00;
     font-weight: bold;
 }
 .estado-atendida {
-    background-color: #4da6ff; /* azul */
+    background-color: #4da6ff;
     color: #fff;
     font-weight: bold;
 }
-/* Parpadeo para "siendo atendida" */
 @keyframes parpadeo {
     0% {opacity: 1;}
     50% {opacity: 0.3;}
     100% {opacity: 1;}
 }
 .estado-en-progreso {
-    background-color: #ff6666; /* rojo claro */
+    background-color: #ff6666;
     color: #fff;
     font-weight: bold;
     animation: parpadeo 1s infinite;
+}
+/* Estilos del buscador */
+.search-container {
+    margin: 20px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.search-input {
+    width: 100%;
+    max-width: 500px;
+    padding: 10px;
+    border: 2px solid #ddd;
+    border-radius: 6px;
+    font-size: 16px;
+    transition: border-color 0.3s;
+}
+.search-input:focus {
+    outline: none;
+    border-color: #0d6efd;
+    box-shadow: 0 0 0 3px rgba(13, 110, 253, 0.15);
 }
 </style>
 </head>
@@ -71,18 +91,26 @@ $result = mysqli_query($con, $sql);
 <div class="citas-header">
     <h2>Citas Médicas</h2>
     <?php if ($isAdmin): ?>
-        <div style="background-color: #129e4f;
-        width: 150px;
-        padding: 10px 16px;
-        border-radius: 6px;
-        cursor: pointer;
-        transition: background 0.3s;">    
-        <a href="/LABORATORIO2/crud/citas/generar-excel.php" style=" color: white;text-decoration: none;">Exportar a Excel</a>  
-        </div>
         <button class="btn-insertar-cita">Insertar</button>
     <?php endif; ?>
 </div>
+
+<!-- Buscador -->
+<div class="search-container">
+    <input type="text" id="searchInput" placeholder="Buscar por paciente, médico, motivo o estado..." class="search-input">
+</div>
+
 <br>
+<?php if ($isAdmin): ?>
+<div style="background-color: #129e4f;
+  width: 150px;
+  padding: 10px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s;">    
+<a href="/LABORATORIO2/crud/citas/generar-excel.php" style="color: white;text-decoration: none;">Exportar a Excel</a>  
+</div>
+<?php endif; ?>
 
 <?php if (mysqli_num_rows($result) === 0): ?>
     <p>No hay citas registradas dentro del año actual o del mes permitido.</p>
@@ -103,7 +131,6 @@ $result = mysqli_query($con, $sql);
         </thead>
         <tbody>
             <?php while ($fila = mysqli_fetch_assoc($result)):
-                // Determinar clase CSS según estado
                 $clase_estado = '';
                 switch(strtolower($fila['estado'])) {
                     case 'pendiente':
@@ -143,6 +170,26 @@ $result = mysqli_query($con, $sql);
 
 <div id="modal-container" class="modal-container" style="display:none;"></div>
 <script src="../../js/script.js"></script>
+
+<!-- Script del buscador -->
+<script>
+document.getElementById('searchInput').addEventListener('keyup', function() {
+    const searchValue = this.value.toLowerCase();
+    const tabla = document.querySelector('.citas-table');
+    const filas = tabla.getElementsByTagName('tr');
+
+    for (let i = 1; i < filas.length; i++) {
+        const fila = filas[i];
+        const texto = fila.textContent.toLowerCase();
+        if (texto.includes(searchValue)) {
+            fila.style.display = '';
+        } else {
+            fila.style.display = 'none';
+        }
+    }
+});
+</script>
+
 </body>
 </html>
 
