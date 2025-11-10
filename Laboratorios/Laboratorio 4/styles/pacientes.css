@@ -1,0 +1,165 @@
+
+
+/* ========== ENCABEZADO ========== */
+.pacientes-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #16a085; /* Verde profesional */
+  color: #fff;
+  padding: 15px 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.pacientes-header h2 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.btn-insertar-paciente {
+  background-color: #2ecc71;
+  border: none;
+  color: white;
+  font-weight: 600;
+  padding: 10px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.btn-insertar-paciente:hover {
+  background-color: #27ae60;
+}
+
+/* ========== TABLA ========== */
+.pacientes-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  margin-top: 20px;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+}
+
+.pacientes-table thead {
+  background-color: #1abc9c;
+  color: white;
+}
+
+.pacientes-table th, 
+.pacientes-table td {
+  padding: 14px 16px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+  font-size: 0.95rem;
+}
+
+.pacientes-table tr:hover {
+  background-color: #f1f3f6;
+  transition: background 0.2s;
+}
+
+/* ========== BOTONES DE ACCIÓN ========== */
+.btn-editar-paciente, .btn-eliminar-paciente {
+  padding: 8px 12px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: transform 0.2s, opacity 0.2s;
+}
+
+.btn-editar-paciente {
+  background-color: #48c9b0;
+  color: white;
+}
+
+.btn-eliminar-paciente {
+  background-color: #e74c3c;
+  color: white;
+}
+
+.btn-editar-paciente:hover {
+  background-color: #16a085;
+  transform: scale(1.05);
+}
+
+.btn-eliminar-paciente:hover {
+  background-color: #c0392b;
+  transform: scale(1.05);
+}
+
+/* ========== MODAL (para editar/insertar paciente) ========== */
+.modal-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal {
+  background: white;
+  padding: 25px;
+  border-radius: 10px;
+  width: 380px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  animation: fadeIn 0.3s ease;
+}
+
+.modal h3 {
+  margin-top: 0;
+  text-align: center;
+  color: #16a085;
+}
+
+.modal label {
+  display: block;
+  font-weight: 600;
+  margin-top: 10px;
+  color: #555;
+}
+
+.modal input {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  margin-top: 5px;
+}
+
+.modal button {
+  margin-top: 15px;
+  width: 48%;
+  padding: 10px;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.modal button[type="submit"] {
+  background-color: #1abc9c;
+  color: white;
+}
+
+.modal button[type="button"] {
+  background-color: #b2bec3;
+  color: #333;
+}
+
+.modal button:hover {
+  opacity: 0.9;
+}
+
+/* ========== ANIMACIÓN MODAL ========== */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}

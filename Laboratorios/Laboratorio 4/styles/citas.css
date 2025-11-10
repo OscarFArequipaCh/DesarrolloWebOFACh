@@ -1,0 +1,164 @@
+/* ========== ENCABEZADO ========== */
+.citas-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #2980b9; /* Azul profesional */
+  color: #fff;
+  padding: 15px 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.citas-header h2 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.btn-insertar-cita {
+  background-color: #3498db;
+  border: none;
+  color: white;
+  font-weight: 600;
+  padding: 10px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.btn-insertar-cita:hover {
+  background-color: #2980b9;
+}
+
+/* ========== TABLA ========== */
+.citas-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  margin-top: 20px;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+}
+
+.citas-table thead {
+  background-color: #3498db;
+  color: white;
+}
+
+.citas-table th, 
+.citas-table td {
+  padding: 14px 16px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+  font-size: 0.95rem;
+}
+
+.citas-table tr:hover {
+  background-color: #f1f3f6;
+  transition: background 0.2s;
+}
+
+/* ========== BOTONES DE ACCIÓN ========== */
+.btn-editar-cita, .btn-eliminar-cita {
+  padding: 8px 12px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: transform 0.2s, opacity 0.2s;
+}
+
+.btn-editar-cita {
+  background-color: #5dade2;
+  color: white;
+}
+
+.btn-eliminar-cita {
+  background-color: #e74c3c;
+  color: white;
+}
+
+.btn-editar-cita:hover {
+  background-color: #2980b9;
+  transform: scale(1.05);
+}
+
+.btn-eliminar-cita:hover {
+  background-color: #c0392b;
+  transform: scale(1.05);
+}
+
+/* ========== MODAL (para editar/insertar cita) ========== */
+.modal-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal {
+  background: white;
+  padding: 25px;
+  border-radius: 10px;
+  width: 380px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  animation: fadeIn 0.3s ease;
+}
+
+.modal h3 {
+  margin-top: 0;
+  text-align: center;
+  color: #2980b9;
+}
+
+.modal label {
+  display: block;
+  font-weight: 600;
+  margin-top: 10px;
+  color: #555;
+}
+
+.modal input, .modal select {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  margin-top: 5px;
+}
+
+.modal button {
+  margin-top: 15px;
+  width: 48%;
+  padding: 10px;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.modal button[type="submit"] {
+  background-color: #3498db;
+  color: white;
+}
+
+.modal button[type="button"] {
+  background-color: #b2bec3;
+  color: #333;
+}
+
+.modal button:hover {
+  opacity: 0.9;
+}
+
+/* ========== ANIMACIÓN MODAL ========== */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+

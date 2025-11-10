@@ -1,0 +1,26 @@
+<!-- Contenedor del fondo y el modal -->
+<div class="modal-overlay" id="modalOverlay">
+  <div class="modal">
+    <h3>Editar Médico</h3>
+    <form id="form-editar">
+      <input type="hidden" name="id">
+
+      <label>Nombre:</label>
+      <input type="text" name="nombre" required>
+
+      <label>Documento:</label>
+      <input type="text" name="documento" required>
+
+      <label>Teléfono:</label>
+      <input type="text" name="telefono" required>
+
+      <label>Correo:</label>
+      <input type="email" name="correo" required>
+
+      <div class="botones">
+        <button type="submit">Actualizar</button>
+        <button type="button" onclick="cerrarModalCRUD()">Cancelar</button>
+      </div>
+    </form>
+  </div>
+</div>

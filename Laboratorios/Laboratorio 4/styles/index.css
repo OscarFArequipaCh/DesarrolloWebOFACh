@@ -1,0 +1,112 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f5f7fa;
+    color: #333;
+}
+
+/* Encabezado */
+header {
+    background-color: #0073b1; /* Azul profesional de hospital */
+    color: white;
+    padding: 20px;
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* Contenedor principal */
+#contenedor {
+    display: flex;
+    height: calc(100vh - 80px); /* Restando header */
+}
+
+/* Menú lateral */
+#menu {
+    width: 220px;
+    background-color: #e6f0fa;
+    border-right: 1px solid #d0dbe8;
+    padding: 20px;
+}
+
+/* Botones del menú */
+.boton-menu {
+    width: 100%;
+    padding: 12px 15px;
+    margin-bottom: 10px;
+    background-color: #0073b1;
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.boton-menu:hover {
+    background-color: #005f8d;
+    transform: scale(1.02);
+}
+
+/* Contenido principal */
+#principal {
+    flex-grow: 1;
+    padding: 30px;
+    overflow-y: auto;
+    background-color: #ffffff;
+}
+
+/* Mensaje del sistema */
+#mensaje {
+    width: 100%;
+    text-align: center;
+    padding: 12px;
+    background-color: #0073b1;
+    color: white;
+    font-weight: bold;
+}
+
+/* Modal */
+#modal {
+    display: none;
+    position: fixed;
+    top: 15%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: white;
+    padding: 15px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    z-index: 1000;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+}
+
+#modal img {
+    max-width: 400px;
+    height: auto;
+    border-radius: 6px;
+}
+
+#modal button {
+    margin-top: 10px;
+    padding: 8px 16px;
+    background-color: #0073b1;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#modal button:hover {
+    background-color: #005f8d;
+}
+

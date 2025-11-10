@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Login Administrador</title>
+<link rel="stylesheet" href="../styles/login.css">
+<style>
+  body {
+    background-image: url('../images/fondo2.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    
+  }
+</style>
+</head>
+<body>
+  
+  <div class="caja">
+    <h2>INICIAR SECCION</h2>
+    <form action="../authentication/autenticar.php" method="POST">
+      <input type="email" name="usuario" placeholder="Correo" required>
+      <input type="password" name="clave" placeholder="Contraseña" required>
+      <br>
+      <div class="botonEntrar">
+              <button type="submit">Entrar</button>
+      </div>
+    </form>
+  </div>
+
+
+</body>
+</html>
