@@ -15,29 +15,6 @@ async function cargarContenido(url) {
   }
 }
 
-document.addEventListener("DOMContentLoaded", () => {
-  const input = document.getElementById("buscador-citas");
-  const boton = document.getElementById("btn-buscar-citas");
-  const filas = document.querySelectorAll(".citas-table tbody tr");
-
-  if (boton && input && filas.length > 0) {
-    boton.addEventListener("click", () => {
-      const filtro = input.value.toLowerCase().trim();
-
-      filas.forEach(fila => {
-        const medico = fila.cells[4]?.textContent.toLowerCase() || "";
-        const paciente = fila.cells[5]?.textContent.toLowerCase() || "";
-
-        if (filtro === "" || medico.includes(filtro) || paciente.includes(filtro)) {
-          fila.style.display = "";
-        } else {
-          fila.style.display = "none";
-        }
-      });
-    });
-  }
-});
-
 // --- Crear modal dinámico (overlay) ---
 function crearModal(htmlInner) {
   // si ya existe, la reemplazamos
