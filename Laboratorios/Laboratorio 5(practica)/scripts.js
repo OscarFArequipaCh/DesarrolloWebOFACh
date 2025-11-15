@@ -27,9 +27,7 @@ function insertMedico() {
 }
 
 function formEditMedico(id) {
-    //let contendor = document.getElementById('resultado');
     fetch(`form-edit-medico.php?id=${id}`).then(response => response.text()).then(data => {
-        //contendor.innerHTML=data;
         abrirModal(data,true)
     });
 }
@@ -37,9 +35,7 @@ function formEditMedico(id) {
 function editMedico() {
     cerrarModal();
     var datos = new FormData(document.querySelector('#form-edit-medico'));
-    //let contendor = document.getElementById('resultado');
     fetch("editarMedico.php", {method:"POST", body:datos}).then(response => response.text()).then(data => {
-        //contendor.innerHTML=data;
         mostrarExito(data);
         CargarMedicos();
         setTimeout(function(){
@@ -49,9 +45,7 @@ function editMedico() {
 }
 
 function deleteMedico(id) {
-    //let contendor = document.getElementById('resultado');
     fetch(`eliminarMedico.php?id=${id}`).then(response => response.text()).then(data => {
-        //contendor.innerHTML=data;
         mostrarExito(data);
         CargarMedicos();
         setTimeout(function(){
@@ -62,16 +56,20 @@ function deleteMedico(id) {
 
 function CargarPacientes() {
     fetch('pacientes.php').then(response => {
-        if (!response.ok) throw new Error('Error al obtener los pacientes');
+        if (!response.ok) throw new Error(`${response.status} ${response.statusText}`);
         return response.text();
     }).then(data => {
         document.getElementById("resultado").innerHTML = data;
-
         const btnInsert = document.getElementById("btn-insert-paciente");
         if (btnInsert) {
             btnInsert.onclick = () => CargarFormulario('form-insert-paciente.html');
         }
-    })
+    }).catch(error => {
+        mostrarError('Error al cargar pacientes: ' + error.message);
+        setTimeout(function(){
+            cerrarModal();
+        }, 5000);
+    });
 };
 
 function insertPaciente() {
@@ -89,9 +87,7 @@ function insertPaciente() {
 }
 
 function formEditPaciente(id) {
-    //let contendor = document.getElementById('resultado');
     fetch(`form-edit-paciente.php?id=${id}`).then(response => response.text()).then(data => {
-        //contendor.innerHTML=data;
         abrirModal(data, true);
     });
 }
@@ -99,9 +95,7 @@ function formEditPaciente(id) {
 function editPaciente() {
     cerrarModal();
     var datos = new FormData(document.querySelector('#form-edit-paciente'));
-    //let contendor = document.getElementById('resultado');
     fetch("editarPaciente.php", {method:"POST", body:datos}).then(response => response.text()).then(data => {
-        //contendor.innerHTML=data;
         mostrarExito(data);
         CargarPacientes();
         setTimeout(function(){
@@ -111,9 +105,7 @@ function editPaciente() {
 }
 
 function deletePaciente(id) {
-    //let contendor = document.getElementById('resultado');
     fetch(`eliminarPaciente.php?id=${id}`).then(response => response.text()).then(data => {
-        //contendor.innerHTML=data;
         mostrarExito(data);
         CargarPacientes();
         setTimeout(function(){
@@ -138,9 +130,7 @@ function CargarCitas() {
 function insertCita() {
     cerrarModal();
     var datos = new FormData(document.querySelector('#form-insert-cita'));
-    //var contendor = document.getElementById('resultado');
     fetch("insertarCitas.php", {method:"POST", body:datos}).then(response => response.text()).then(data => {
-        //contendor.innerHTML=data;
         mostrarExito(data);
         CargarCitas();
         setTimeout(function(){
@@ -150,9 +140,7 @@ function insertCita() {
 }
 
 function formEditCita(id) {
-    //let contendor = document.getElementById('modal');
     fetch(`form-edit-cita.php?id=${id}`).then(response => response.text()).then(data => {
-        //contendor.innerHTML=data;
         abrirModal(data, true);
     });
 }
@@ -160,9 +148,7 @@ function formEditCita(id) {
 function editCita() {
     cerrarModal();
     var datos = new FormData(document.querySelector('#form-edit-cita'));
-    //let contendor = document.getElementById('resultado');
     fetch("editarCita.php", {method:"POST", body:datos}).then(response => response.text()).then(data => {
-        //contendor.innerHTML=data;
         mostrarExito(data);
         CargarCitas();
         setTimeout(function(){
@@ -172,9 +158,7 @@ function editCita() {
 }
 
 function deleteCita(id) {
-    //let contendor = document.getElementById('resultado');
     fetch(`eliminarCita.php?id=${id}`).then(response => response.text()).then(data => {
-        //contendor.innerHTML=data;
         mostrarExito(data);
         CargarCitas();
         setTimeout(function(){
@@ -188,7 +172,6 @@ function CargarFormulario(url) {
         if (!response.ok) throw new Error('Error al cargar formulario');
         return response.text();
     }).then(data => {
-        //document.getElementById("resultado").innerHTML = data;
         abrirModal(data, true);
     })
 }
@@ -196,11 +179,8 @@ function CargarFormulario(url) {
 function abrirModal(htmlContent, boton) {
     const modal = document.getElementById("modal");
     const overlay = document.getElementById("modal-overlay");
-    //document.getElementById("buton-close").style.display = boton === false ? "none" : "block";
     document.getElementById("modal-close").style.display = boton === false ? "none" : "block";
     document.getElementById("modal-content").innerHTML = htmlContent;
-    
-    //document.getElementById("modal").style.display = "block";
 
     overlay.classList.remove("hidden");
     modal.classList.remove("hidden");
@@ -213,18 +193,13 @@ function abrirModal(htmlContent, boton) {
 
 function cerrarModal() {
     const modal = document.getElementById("modal");
-    //document.getElementById("modal").style.display = "none";
     const overlay = document.getElementById("modal-overlay");
 
-    // Fade-out
     overlay.style.opacity = "0";
     modal.style.opacity = "0";
 
-    // Esperar a que termine la animación
-    setTimeout(() => {
-        overlay.classList.add("hidden");
-        modal.classList.add("hidden");
-    }, 300);
+    overlay.classList.add("hidden");
+    modal.classList.add("hidden");
 }
 
 function mostrarExito(msg) {

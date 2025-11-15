@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>2do Parcial - 1</title>
+
+    <link rel="stylesheet" href="estilos.css">
+      
+    </style>
+
+</head>
+<body>
+
+<header>
+    Segundo Parcial 1 SIS 256 - Tecnologia y Desarrollo Web
+</header>
+
+<div id="info">
+    Estudiante: Arequipa Chavarria Oscar Felix &nbsp;&nbsp;|&nbsp;&nbsp; CU: 35-4566
+</div>
+
+<div id="contenedor">
+
+    <div id="menu">
+       
+    <button class="btnMenu" id="btn1" onclick="cargarContenido()">Pregunta 1 </button>
+    <button class="btnMenu" id="btn2" onclick="cargarFormReceta()">Pregunta 2 </button>
+    <button class="btnMenu" id="btn3" onclick="cargarFiltrador()">Pregunta 3 </button>
+    <button class="btnMenu" id="btn4">Pregunta 4 </button>
+    
+    </div>
+    <div id="contenido">
+        <h2>Bienvenido</h2>
+        <p>Seleccione una opción del menú.</p>
+    </div>
+</div>
+
+<div id="mensaje">
+   Inicializando...
+</div>
+
+<div id="modal" style="display: none; position: fixed; top: 10%; left: 40%; border: 2px solid black; padding: 10px; background-color: white;">
+    <img src="" id="imagenModal" style="width: 300px; height: 300px;">
+    <button onclick="cerrarModal()">Cerrar</button>
+</div>
+
+<div id="modal-formulario" style="display: none; position: fixed; top: 10%; left: 40%; border: 2px solid black; padding: 10px; background-color: white;">
+    <div id="contenidoModal"></div>
+    <button onclick="cerrarModalForm()">Cerrar</button>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
