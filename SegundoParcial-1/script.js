@@ -73,3 +73,20 @@ function modalForm(data){
 function cerrarModalForm(){
     document.getElementById('modal-formulario').style.display = 'none';
 }
+
+function CargarTemas(){
+    var content = document.getElementById('contenido');
+    fetch("temas.html").then(response => response.text()).then(data => {
+        content.innerHTML = data;
+    })
+}
+
+function agregarColor(){
+    var color = document.getElementById("color").value;
+    var contendor = document.getElementById("contenedor_color");
+    var divColor = document.createElement("div");
+    divColor.style.width = "100px";
+    divColor.style.height = "100px";
+    divColor.style.backgroundColor = color;
+    contendor.appendChild(divColor);
+}
