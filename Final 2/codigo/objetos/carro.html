@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Función constructora que actúa como una "clase" en JS clásico.
+        // Recibe atributos y los asigna al objeto creado con 'new'.
+        function carro(marca, modelo, color) {
+
+            // Propiedades del objeto
+            this.marca = marca;
+            this.modelo = modelo;
+            this.color = color;
+
+            // Se asigna el método mostrar, que viene de la función Mostrar()
+            this.mostrar = Mostrar;
+        }
+
+        // Función que será usada como método de los objetos carro
+        function Mostrar() {
+            // 'this' se refiere al objeto que lo llamó
+            document.writeln(this.modelo);
+        }
+
+        // Se crea un objeto usando la función constructora
+        coche1 = new carro("Seat", "Toledo", "rojo");
+
+        // Imprime la propiedad color del objeto
+        document.writeln(coche1.color);
+
+        // Llama al método mostrar(), que imprime el modelo del coche
+        coche1.mostrar();
+    </script>
+</body>
+</html>

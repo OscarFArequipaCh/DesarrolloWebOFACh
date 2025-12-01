@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      // prompt() pide un dato al usuario y lo devuelve como texto (string)
+      a = prompt("Introduzca el valor de a");
+
+      // otro prompt para pedir b
+      b = prompt("Introduzca el valor de b");
+
+      // parseInt() convierte las cadenas a números enteros
+      // luego se suman y se guardan en c
+      c = parseInt(a) + parseInt(b);
+
+      // alert() muestra un mensaje en una ventana emergente
+      alert("el valor de a + b es " + c);
+
+      // confirm() muestra un mensaje con dos botones: Aceptar / Cancelar
+      // Si el usuario presiona Aceptar → devuelve true
+      // Si presiona Cancelar → devuelve false
+      if (confirm("Desea confirmar lo hecho") == true) {
+        // Si el usuario confirma se muestra este mensaje
+        alert("confirmo");
+      } else {
+        // Si el usuario cancela se muestra este otro
+        alert("cancelo");
+      }
+    </script>
+  </body>
+</html>

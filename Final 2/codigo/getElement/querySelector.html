@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <form action="" method="get">
+        <label>Sexo</label>
+        <input type="radio" name="sexo" value="masculino"> Masculino
+        <input type="radio" name="sexo" value="femenino"> Femenino
+    </form>
+
+    <script>
+
+        // querySelector devuelve el PRIMER elemento que coincida con el selector CSS
+        // En este caso selecciona el primer input femenino (si hubiera más)
+        var femenino = document.querySelector("input[value='femenino']");
+
+        // Cambiamos su fondo a rosa
+        femenino.style.backgroundColor = "pink";
+
+        // También podemos seleccionar el primer input masculino
+        var masculino = document.querySelector("input[value='masculino']");
+        masculino.style.backgroundColor = "lightblue";
+
+    </script>
+
+</body>
+</html>

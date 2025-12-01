@@ -1,0 +1,10 @@
+la propiedad mas usada es innerhtml que se usa para cambiar el valor que tiene una etiqueta html con otro
+
+
+otras propiedades:
+src : va despues de llamar al elemento que se quiere cambiar y cambia la URL de es elemto por otro elegido
+
+textContent : va despues de llamar al elemento que se quiere cambiar y cambia el texto que se ecnuetra por uno nuevo (ignora el html)
+
+style : va despues de llamar al elemento que se quiere cambiar en este caso cambia el estilo de divho elemento, para especificar que estilo se quiere cambiar
+despues de style se agra .valoracambiar como color, backgorudcolor,etc, esta centrado para cambiar el diseño

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Definición de una clase en JavaScript (sintaxis moderna ES6)
+        class Coche {
+
+            // Declaración de propiedades (opcional en JS)
+            marca;
+            modelo;
+            color;
+
+            // El constructor se ejecuta al crear un nuevo objeto de esta clase
+            constructor(marca, modelo, color) {
+                // Se asignan los valores recibidos a las propiedades del objeto
+                this.marca = marca;
+                this.modelo = modelo;
+                this.color = color;
+            }
+
+            // Método de la clase. Todos los objetos lo pueden usar.
+            MostrarCarro() {
+                // 'this' se refiere al objeto que llamó al método
+                document.writeln(this.modelo);
+            }
+        }
+
+        // Se crea un nuevo objeto usando la clase
+        var coche1 = new Coche("Seat", "Toledo", "rojo");
+
+        // Se llama al método del objeto, que imprime el modelo
+        coche1.MostrarCarro();
+
+    </script>
+</body>
+</html>

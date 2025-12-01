@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const a = 3;
+
+        if(a > 0){
+            let b = 5;
+            document.writeln(b); // Esto funciona porque b está definida en este ámbito
+        }
+        document.writeln(b); // Da error porque b no está definida en este ámbito
+    </script>
+</body>
+</html>

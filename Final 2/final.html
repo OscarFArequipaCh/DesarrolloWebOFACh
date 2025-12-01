@@ -1,0 +1,72 @@
+
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="./css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./css/estilos.css">
+    <title>Segundo Parcial SIS 256</title>
+</head>
+<body class="bg-light">
+    <header class="bg-primary text-white border-bottom">
+        <div class="container-fluid">
+            <div class="row align-items-center py-3">
+                <div class="col-auto">
+                    <img src=".\images\escudo.jpg" alt="Escudo universidad san francisco xavier" width="120">
+                </div>
+                <div class="col" id="menu">
+                    <div class="mb-2 border-bottom pb-2">
+                        <div class="btn-group flex-wrap" role="group">
+                            <button type="button" class="btn btn-light border" id="btn-pregunta1">Pregunta 1</button>
+                            <button type="button" class="btn btn-light border" id="btn-pregunta2" onclick="cargarContent('horarios.php')">Pregunta 2</button>
+                            <button type="button" class="btn btn-light border" onclick="cargarcalificaciones()">Pregunta 3</button>
+                            <button type="button" class="btn btn-light border">Pregunta 4</button>
+                            <button type="button" class="btn btn-light border">Pregunta 5</button>
+                        </div>
+                    </div>
+                    <div id="titulo" class="text-center bg-secondary text-white">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-auto" style="width: 180px;">
+                    <div id="sub-menu" class="list-group">
+                        <div class="list-group-item bg-secondary text-white fw-bold text-center">
+                            Opciones
+                        </div>
+                        <button type="button" class="list-group-item list-group-item-action bg-info-subtle">Detalle 1</button>
+                        <button type="button" class="list-group-item list-group-item-action bg-info-subtle">Detalle 2</button>
+                    </div>
+                </div>
+                <div class="col" id="contenido">
+                    <div id="informacion" class="card shadow mt-5 mb-5" style="max-width: 500px; margin: 0 auto;">
+                        <div class="card-header bg-info text-white">
+                            <h3 class="mb-1">SIS 256 Programación Web</h3>
+                            <p class="mb-0">Final 2</p>
+                        </div>
+                        <div class="card-body text-center position-relative" style="padding-top: 80px;">
+                            <img src=".\images\estudiante.png" alt="Estudiante" height="120" width="120" class="rounded-circle position-absolute" style="top: -60px; left: 50%; transform: translateX(-50%);">
+                        </div>
+                        <div class="card-footer bg-light-subtle">
+                            <h4 class="mb-2">Arequipa Chavarria Oscar Felix</h4>
+                            <p class="mb-2 text-muted">Ingenieria de Sistemas</p>
+                            <p class="mb-0">Repositorio: <a href="https://github.com/" target="_blank" class="link-info">haga click aqui</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer class="bg-secondary text-white text-center py-3 mt-5 border-top">
+        Sucre - Semestre 2-2025
+    </footer>
+    <script src="js/script.js"></script>
+    <script src="./js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

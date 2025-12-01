@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <form action="" method="get">
+        <label for="sexo">Sexo</label>
+
+        <!-- Ambos inputs tienen el mismo name="sexo" -->
+        <!-- Esto permite obtenerlos como una colección -->
+        <input type="radio" name="sexo" value="masculino"> Masculino
+        <input type="radio" name="sexo" value="femenino"> Femenino
+    </form>
+
+    <script>
+
+        // Obtiene todos los elementos cuyo name es "sexo"
+        // Devuelve un NodeList/HTMLCollection de los radios
+        var sexo = document.getElementsByName("sexo");
+
+        // Recorremos la colección con un for-in (recorre índices)
+        for (i in sexo) {
+
+            // Si el valor del input es "femenino"
+            if (sexo[i].value == 'femenino') {
+
+                // Cambiamos el fondo del radio a rosado
+                sexo[i].style.backgroundColor = "pink";
+            }
+            else {
+
+                // Si no, asumimos que es masculino y ponemos celeste
+                sexo[i].style.backgroundColor = "lightblue";
+            }
+        }
+
+    </script>
+
+</body>
+</html>

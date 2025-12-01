@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<p id="texto">Texto original</p>
+<input id="entrada" type="text" value="Valor inicial">
+<a id="enlace" href="#">Enlace original</a>
+<div id="contenedor">Contenido original</div>
+
+<script>
+// Cambiar texto
+document.getElementById("texto").textContent = "Texto modificado";
+
+// Cambiar valor de input
+document.getElementById("entrada").value = "Nuevo valor";
+
+// Cambiar enlace
+document.getElementById("enlace").href = "https://www.google.com";
+document.getElementById("enlace").textContent = "Ir a Google";
+
+// Cambiar contenido con HTML
+document.getElementById("contenedor").innerHTML = "<strong>Contenido</strong> nuevo";
+
+// Cambiar estilo
+document.getElementById("texto").style.color = "blue";
+</script>
+
+</body>
+</html>

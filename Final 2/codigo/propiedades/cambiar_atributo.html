@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <img src="images/imagen1.jpg" alt="auto" id="miImagen">
+    <br>
+    <p id="parrafo">este es un parrafo</p>
+    <script>
+        document.getElementById("miImagen").src = "images/imagen2.jpg"; // trae el valor de el elemento con id muImagen y cambia el atributo src de la imagen
+        document.getElementById("parrafo").textContent = "este es el parrafo cambiado"; // trae el valor del elemento con id parrafo y cambia su contenido de texto
+    </script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Creación de un objeto literal en JavaScript
+        // Se definen propiedades y métodos directamente dentro de {}
+        coche1 = {
+            marca: "Seat",                // Propiedad marca
+            modelo: "Toledo",             // Propiedad modelo
+            color: "rojo",                // Propiedad color
+
+            // Método del objeto (función dentro del objeto)
+            MostrarCarro: function() {
+                // this.modelo hace referencia a la propiedad modelo del mismo objeto
+                document.writeln(this.modelo);
+            }
+        }
+
+        // Llamada al método del objeto: imprime el modelo en pantalla
+        coche1.MostrarCarro();
+    </script>
+</body>
+</html>

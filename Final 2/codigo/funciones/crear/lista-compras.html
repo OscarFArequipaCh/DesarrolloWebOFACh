@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <!-- Input para escribir un nuevo elemento -->
+    <label for="elemento">Añadir a la lista</label>
+    <input type="text" id="elemento">
+
+    <!-- Botón para añadir -->
+    <button id="button">Añadir</button>
+
+    <!-- Lista donde agregaremos los <li> -->
+    <ul id="lista"></ul>
+
+    <script>
+
+        // Evento onclick del botón
+        document.getElementById('button').onclick = function() {
+
+            // Se obtiene la lista <ul>
+            let lista = document.getElementById('lista');
+
+            // Se obtiene el texto ingresado en el input
+            let elemento = document.getElementById('elemento').value;
+
+            // Se agrega un nuevo <li> concatenando al contenido existente
+            // innerHTML += permite añadir HTML sin borrar lo anterior
+            lista.innerHTML += `<li>${elemento}</li>`;
+        }
+
+    </script>
+
+</body>
+</html>

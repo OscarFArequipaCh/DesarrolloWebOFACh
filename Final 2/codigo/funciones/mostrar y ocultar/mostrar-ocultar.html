@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <!-- Muchos párrafos para manipular -->
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit...</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit...</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit...</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit...</p>
+    <p>Iure animi possimus neque eius...</p>
+    <p>Minima beatae iusto labore error cum ex fugit...</p>
+    <p>Consequatur itaque, et nesciunt debitis animi...</p>
+    <p>Aut unde praesentium non sapiente magni quam...</p>
+    <p>Pariatur, enim nesciunt...</p>
+
+    <!-- Botones con funciones onclick -->
+    <button onclick="MostrarOcultar()">Mostrar/Ocultar</button>
+    <button onclick="Pintar()">Pintar</button>
+
+    <script>
+
+        // Función para alternar entre visible / oculto
+        function MostrarOcultar() {
+
+            // Obtener todos los <p>
+            var parrafos = document.getElementsByTagName('p');
+
+            // Recorrer todos los párrafos
+            for (i = 0; i < parrafos.length; i++) {
+
+                // Mostrar en consola la visibilidad actual
+                console.log(parrafos[i].style.visibility);
+
+                // Si el párrafo es visible, lo ocultamos
+                if (parrafos[i].style.visibility == 'visible') {
+                    parrafos[i].style.visibility = 'hidden';
+                }
+
+                // Si es hidden, lo hacemos visible
+                else {
+                    parrafos[i].style.visibility = 'visible';
+                }
+            }
+        }
+
+
+        // Función para pintar los párrafos con colores alternados
+        function Pintar() {
+
+            // Obtener los párrafos
+            var parrafos = document.getElementsByTagName('p');
+
+            // j servirá para alternar los colores (0 → rojo, 1 → amarillo, 2 → verde)
+            var j = 0;
+
+            for (i = 0; i < parrafos.length; i++) {
+
+                // Color según el valor de j
+                if (j == 0) {
+                    parrafos[i].style.backgroundColor = "red";
+                }
+                if (j == 1) {
+                    parrafos[i].style.backgroundColor = "yellow";
+                }
+                if (j == 2) {
+                    parrafos[i].style.backgroundColor = "green";
+                }
+
+                // Pasamos al siguiente color
+                j++;
+
+                // Cuando llega a 3, volvemos a 0 para repetir el ciclo
+                if (j == 3) {
+                    j = 0;
+                }
+            }
+        }
+
+    </script>
+
+</body>
+</html>

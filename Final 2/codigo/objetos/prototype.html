@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        // Función constructora: sirve para crear objetos con "new"
+        function carro(marca, modelo, color) {
+            // Propiedades del objeto
+            this.marca = marca;
+            this.modelo = modelo;
+            this.color = color;
+        }
+
+        // Se agrega un método al PROTOTIPO de la función constructora
+        // Esto hace que todas las instancias creadas con 'new carro' lo compartan
+        carro.prototype.MostrarCarro = function() {
+            // 'this' se refiere al objeto que llama al método
+            document.writeln(this.modelo);
+        }
+
+        // Se crea un objeto usando la función constructora
+        coche1 = new carro("Seat", "Toledo", "rojo");
+
+        // Imprime la propiedad color del objeto
+        document.writeln(coche1.color);
+
+        // Llama al método del prototipo: imprime el modelo del coche
+        coche1.MostrarCarro();
+
+    </script>
+</body>
+</html>

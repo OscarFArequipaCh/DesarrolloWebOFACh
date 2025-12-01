@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Se crea un arreglo (array) con los días de la semana
+        var dias = ["Lunes", "Martes", "Miercoles", "Jueves", "Viernes", "Sábado", "Domingo"];
+
+        // Bucle for-in: recorre los índices del arreglo
+        for(i in dias){
+            // document.write imprime el valor del arreglo en la página
+            document.write(dias[i] + "<br>");
+        }
+
+        document.write("<br>");
+        document.write("<br>");
+
+        // forEach: recorre cada elemento del arreglo directamente
+        dias.forEach(function(elemento){
+            // elemento es el valor (Lunes, Martes, etc.)
+            document.write(elemento + "<br>");
+        });
+
+        document.write("<br>");
+        document.write("<br>");
+
+        // Otro forEach (es exactamente lo mismo que el anterior)
+        dias.forEach(function (element){
+            // element es cada día del arreglo
+            document.write(element + "<br>");
+        });
+
+    </script>
+</body>
+</html>

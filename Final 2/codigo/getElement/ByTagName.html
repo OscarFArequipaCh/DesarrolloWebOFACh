@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <!-- Tres divs para seleccionar después con JS -->
+    <div>Lorem, ipsum dolor sit amet consectetur adipisicing elit...</div>
+    <div>Lorem ipsum dolor sit amet consectetur adipisicing elit...</div>
+    <div>Lorem ipsum dolor sit amet consectetur adipisicing elit...</div>
+
+    <script>
+
+        // Obtiene todos los elementos <div> y devuelve una colección (HTMLCollection)
+        var parrafos = document.getElementsByTagName("div");
+
+        // Recorremos la colección con un for-in (recorre índices)
+        for (i in parrafos) {
+
+            // i es el índice de cada <div>
+            // Si el índice es par (0, 2, 4...), aplica estilo
+            if (i % 2 == 0) {
+
+                // Cambia el color de fondo de ese div
+                parrafos[i].style.backgroundColor = "red";
+            }
+        }
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Función que devuelve un saludo dependiendo de la hora actual
+        function saludar() {
+
+            // Se crea un objeto Date() que contiene fecha y hora actual
+            var tiempo = new Date();
+
+            // Variables: hora almacenará la hora; cad es el texto base
+            var hora, cad = "son las ";
+
+            // with(tiempo) permite usar directamente los métodos del objeto Date
+            with(tiempo) {
+                // Obtiene la hora actual (0-23)
+                hora = getHours();
+
+                // Concatena la hora + minutos + segundos al texto "son las"
+                cad += hora + ":" + getMinutes() + ":" + getSeconds();
+            }
+
+            // Condiciones para definir el saludo según la hora
+            if (hora < 12)
+                cad = "Buenos días " + cad;     // Mañana
+            else if (hora < 18)
+                cad = "Buenas tardes " + cad;   // Tarde
+            else
+                cad = "Buenas noches " + cad;   // Noche
+
+            // Devuelve el texto final
+            return cad;
+        }
+
+        // Imprime el saludo en pantalla
+        document.write(saludar());
+    </script>
+</body>
+</html>
